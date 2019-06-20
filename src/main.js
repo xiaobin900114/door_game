@@ -10,11 +10,11 @@ let openPath1 = "";
 let openPath2 = "";
 let openPath3 = "";
 let count = 0;
-let stop = false;
+let gameOn = true;
 
 const resetGame = () => {
   let randomAssign = Math.floor(Math.random() * 6);
-  stop = false;
+  gameOn = true;
   switch (randomAssign) {
     case 0:
       openPath1 = imageRobot;
@@ -50,11 +50,15 @@ const resetGame = () => {
   }
 }
 
-const stillPlay = () => {
+/*const stillPlay = () => {
   count++;
   if (count == 3) {
     resetButton.innerHTML= "You win!";
   };
+} */
+
+const youWin = () => {
+  resetButton.innerHTML= "You win!";
 }
 
 const gameOver = () => {
@@ -62,7 +66,7 @@ const gameOver = () => {
   openPath1 = doorClosed;
   openPath2 = doorClosed;
   openPath3 = doorClosed;
-  stop = true;
+  gameOn = false;
 }
 
 resetButton.onclick = () => {
@@ -75,37 +79,41 @@ resetButton.onclick = () => {
 }
 
 door1.onclick = () => {
-  if(door1.src == doorClosed & !stop) {
+  if(door1.src == doorClosed & gameOn) {
     door1.src = openPath1;
-    if (openPath1 == imageRobot & count != 2) {
+    count ++;
+    if (count == 3) {
+      youWin();
+    } else if (openPath1 == imageRobot) {
       gameOver();
-    } else {
-      stillPlay();
     }
   };
 }
 
 door2.onclick = () => {
-  if(door2.src == doorClosed & !stop){
+  if(door2.src == doorClosed & gameOn){
     door2.src = openPath2;
-    if (openPath2 == imageRobot & count != 2) {
+    count ++;
+    if (count == 3) {
+      youWin();
+    } else if (openPath2 == imageRobot) {
       gameOver();
-    } else {
-      stillPlay();
+    }
+  }
+}
+
+door3.onclick = () => {
+  if(door3.src == doorClosed & gameOn){
+    door3.src = openPath3;
+    count ++;
+    if (count == 3) {
+      youWin();
+    } else if (openPath3 == imageRobot) {
+      gameOver();
     }
   };
 }
 
-door3.onclick = () => {
-  if(door3.src == doorClosed & !stop){
-    door3.src = openPath3;
-    if (openPath3 == imageRobot & count != 2) {
-      gameOver();
-    } else {
-      stillPlay();
-    }
-  };
-}
 
 
 /* door1.onclick = () => {
