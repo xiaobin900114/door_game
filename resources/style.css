@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #010165;
+  font-family: 'Work Sans';
+  font-size: 14px;
+}
+
+header{
+  background-color: #00ffff;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 3rem;
+  margin: 0.5rem;
+}
+
+.li-container h3 {
+  margin-right: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+main {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+
+#list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+#title {
+  margin: 1rem;
+}
+
+#construction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.li-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+
+.details {
+}
+
+#doors {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+button {
+  border-radius: none;
+  width: 10rem;
+  height: 5rem;
+  background-color: #eb6536;
+  color: #010165;
+  font-size: 1rem;
+  border: none;
+}
